@@ -1,230 +1,212 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.9px '.AppleSystemUIFontMonospaced'; -webkit-text-stroke: #000000; background-color: #0c0e12}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.9px '.AppleSystemUIFontMonospaced'; color: #ecf4fb; -webkit-text-stroke: #ecf4fb; background-color: #0c0e12}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.9px '.AppleSystemUIFontMonospaced'; color: #ecf4fb; -webkit-text-stroke: #ecf4fb; background-color: #0c0e12; min-height: 15.0px}
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #ff6f61;
+        }
+        .subscriptions {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .subscription {
+            flex: 1;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            background: #f9f9f9;
+        }
+        .subscription:hover {
+            background-color: #ffe6e6;
+            transform: scale(1.05);
+        }
+        .subscription.selected {
+            background-color: #ff6f61;
+            color: #fff;
+            border-color: #ff6f61;
+            box-shadow: 0 0 15px rgba(255, 111, 97, 0.7);
+        }
+        .addons {
+            margin: 20px 0;
+        }
+        .addon {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .total {
+            font-size: 1.5em;
+            text-align: center;
+            margin: 20px 0;
+            color: #ff6f61;
+        }
+        .confirm {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .confirm:hover {
+            background-color: #218838;
+        }
+        .subscription img, .addon img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .subscription h3, .addon label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p2"><span class="s1">&lt;html lang="en"&gt;</span></p>
-<p class="p2"><span class="s1">&lt;head&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Subscription Page&lt;/title&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>padding: 0;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>background: linear-gradient(to right, #fbc2eb, #a6c1ee);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>color: #333;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.container {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 800px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0 auto;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>background: #fff;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 10px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>h1 {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>color: #ff6f61;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.subscriptions {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>gap: 15px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>margin: 20px 0;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.subscription {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>flex: 1;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px solid #ccc;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 10px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>transition: background-color 0.3s, transform 0.3s;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>background: #f9f9f9;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.subscription:hover {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #ffe6e6;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>transform: scale(1.05);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.subscription.selected {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #ff6f61;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>color: #fff;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>border-color: #ff6f61;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 15px rgba(255, 111, 97, 0.7);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.addons {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>margin: 20px 0;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.addon {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: space-between;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.total {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.5em;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>margin: 20px 0;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>color: #ff6f61;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.confirm {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>display: block;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>padding: 15px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #28a745;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>color: white;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>text-decoration: none;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 10px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: bold;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>transition: background-color 0.3s;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.confirm:hover {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #218838;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.subscription img, .addon img {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 100%;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 10px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.subscription h3, .addon label {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>gap: 10px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p2"><span class="s1">&lt;body&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Select the perfect level to enhance your life!&lt;/h1&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="subscriptions"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="subscription" data-price="100" data-type="Monthly"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;img src="https://via.placeholder.com/150" alt="Monthly Subscription"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Monthly ($100/Month)&lt;/h3&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;This is for POOR people. Plus you must pay by 1pm on the first day of each month or you’ll be blocked for 3 months.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="subscription selected" data-price="1000" data-type="Annual"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;img src="https://via.placeholder.com/150" alt="Annual Subscription"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Annual Bestie ($1,000 annually)&lt;/h3&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Get 2 free months of life-enhancing location intel! You’ll be in the know on all of my comings and goings for a full year! &lt;strong&gt;Best value!&lt;/strong&gt;&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="subscription" data-price="3000" data-type="Annual Stalker"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;img src="https://via.placeholder.com/150" alt="Annual Stalker Subscription"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Annual Stalker ($3000 annually)&lt;/h3&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Unlocks timestamps for all my location updates so you can analyze my speed, stops, and patterns. Great for obsessive planners or detectives.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="subscription" data-price="10000" data-type="Lifetime VIP Access"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;img src="https://via.placeholder.com/150" alt="Lifetime VIP Access"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Lifetime VIP ($10,000 one-time fee)&lt;/h3&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;For the ultimate flex, pay a premium for permanent access, ensuring you'll never lose track of me no matter how many pricing changes I make in the future.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p3"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="addons"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Exclusive add-ons that are only available to subscribers:&lt;/h2&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="addon"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;input type="checkbox" class="addon-checkbox" data-price="25"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;img src="https://via.placeholder.com/50" alt="Random Vibes Messages"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Random Vibes Messages&lt;/strong&gt; ($25/text) Get sporadic texts from me like “Thinking of going to Costco” or “I just saw a dog.” No explanations, no follow-ups.</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="addon"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;input type="checkbox" class="addon-checkbox" data-price="100"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;img src="https://via.placeholder.com/50" alt="Bathroom Alerts"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Bathroom Alerts&lt;/strong&gt; ($100/notification) Receive an alert every time I enter or leave a bathroom. Be in the know, when I go! Cause I go A LOT!</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="addon"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;input type="checkbox" class="addon-checkbox" data-price="250"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;img src="https://via.placeholder.com/50" alt="Access to My Past Locations"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Access to My Past Locations&lt;/strong&gt; ($250/month) Want to relive my thrilling trip to the grocery store three weeks ago? This upgrade unlocks access to a comprehensive history.</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="addon"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;input type="checkbox" class="addon-checkbox" data-price="200"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;img src="https://via.placeholder.com/50" alt="VIP Passive Aggression Package"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;VIP Passive Aggression Package&lt;/strong&gt; ($200/month) Did I go somewhere cool without you? This sends me automated messages on your behalf like, “Wow, cool to see you there without me.”</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="addon"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;input type="checkbox" class="addon-checkbox" data-price="500"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;img src="https://via.placeholder.com/50" alt="Special Event Spoilers"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Special Event Spoilers&lt;/strong&gt; ($500/event) Want to know when I’m at a wedding, funeral, or secret rave? This upgrade flags special events so you have a chance to crash.</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="addon"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;input type="checkbox" class="addon-checkbox" data-price="1000"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;img src="https://via.placeholder.com/50" alt="Guilt-Free Downtime"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Guilt-Free Downtime&lt;/strong&gt; ($1,000/year) For subscribers who want to stop obsessing: pay extra to have zero updates for one whole day a week! Getting a break from it all.</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p3"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="total"&gt;Total based on your selections: $&lt;span id="total"&gt;1000&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;a href="https://account.venmo.com/u/angel-anderson" class="confirm"&gt;Confirm Subscription&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;Final Reminder: This is your one and only chance to subscribe. If you don't sign up now, you'll lose access to my exclusive whereabouts forever. No second chances, no secret invites, and no regrets.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;DISCLAIMER:&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;By signing up for this subscription, you confirm that you have both impeccable taste and no common sense, which we applaud. You are paying for the privilege of knowing my exact whereabouts at all times. This subscription does not entitle you to my time, attention, or baked goods, no matter how close I am to your house. If you see me near your home and I don’t stop by, you may demand a refund but will not receive one. Add-ons are purely optional and mostly pointless, but let’s be honest, you’re here for the thrill of outrageous overspending. No refunds, even if I get abducted by aliens and they take over my social media.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p3"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>const subscriptions = document.querySelectorAll('.subscription');</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>const addons = document.querySelectorAll('.addon-checkbox');</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>const totalElement = document.getElementById('total');</span></p>
-<p class="p3"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>let total = 1000; // Annual is selected by default</span></p>
-<p class="p3"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>subscriptions.forEach(subscription =&gt; {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>subscription.addEventListener('click', () =&gt; {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>subscriptions.forEach(sub =&gt; sub.classList.remove('selected'));</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>subscription.classList.add('selected');</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>total = parseInt(subscription.dataset.price);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>addons.forEach(addon =&gt; {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                        </span>if (addon.checked) {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                            </span>total += parseInt(addon.dataset.price);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>});</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>updateTotal();</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p3"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>addons.forEach(addon =&gt; {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>addon.addEventListener('change', () =&gt; {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>const addonPrice = parseInt(addon.dataset.price);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>if (addon.checked) {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                        </span>total += addonPrice;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>} else {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                        </span>total -= addonPrice;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span>updateTotal();</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p3"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>function updateTotal() {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>totalElement.textContent = total;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/html&gt;</span></p>
+    <div class="container">
+        <h1>Select the perfect level to enhance your life!</h1>
+        <div class="subscriptions">
+            <div class="subscription" data-price="100" data-type="Monthly">
+                <img src="https://via.placeholder.com/150" alt="Monthly Subscription">
+                <h3>Monthly ($100/Month)</h3>
+                <p>This is for POOR people. Plus you must pay by 1pm on the first day of each month or you’ll be blocked for 3 months.</p>
+            </div>
+            <div class="subscription selected" data-price="1000" data-type="Annual">
+                <img src="https://via.placeholder.com/150" alt="Annual Subscription">
+                <h3>Annual Bestie ($1,000 annually)</h3>
+                <p>Get 2 free months of life-enhancing location intel! You’ll be in the know on all of my comings and goings for a full year! <strong>Best value!</strong></p>
+            </div>
+            <div class="subscription" data-price="3000" data-type="Annual Stalker">
+                <img src="https://via.placeholder.com/150" alt="Annual Stalker Subscription">
+                <h3>Annual Stalker ($3000 annually)</h3>
+                <p>Unlocks timestamps for all my location updates so you can analyze my speed, stops, and patterns. Great for obsessive planners or detectives.</p>
+            </div>
+            <div class="subscription" data-price="10000" data-type="Lifetime VIP Access">
+                <img src="https://via.placeholder.com/150" alt="Lifetime VIP Access">
+                <h3>Lifetime VIP ($10,000 one-time fee)</h3>
+                <p>For the ultimate flex, pay a premium for permanent access, ensuring you'll never lose track of me no matter how many pricing changes I make in the future.</p>
+            </div>
+        </div>
+
+        <div class="addons">
+            <h2>Exclusive add-ons that are only available to subscribers:</h2>
+            <div class="addon">
+                <label>
+                    <input type="checkbox" class="addon-checkbox" data-price="25">
+                    <img src="https://via.placeholder.com/50" alt="Random Vibes Messages">
+                    <strong>Random Vibes Messages</strong> ($25/text) Get sporadic texts from me like “Thinking of going to Costco” or “I just saw a dog.” No explanations, no follow-ups.
+                </label>
+            </div>
+            <div class="addon">
+                <label>
+                    <input type="checkbox" class="addon-checkbox" data-price="100">
+                    <img src="https://via.placeholder.com/50" alt="Bathroom Alerts">
+                    <strong>Bathroom Alerts</strong> ($100/notification) Receive an alert every time I enter or leave a bathroom. Be in the know, when I go! Cause I go A LOT!
+                </label>
+            </div>
+            <div class="addon">
+                <label>
+                    <input type="checkbox" class="addon-checkbox" data-price="250">
+                    <img src="https://via.placeholder.com/50" alt="Access to My Past Locations">
+                    <strong>Access to My Past Locations</strong> ($250/month) Want to relive my thrilling trip to the grocery store three weeks ago? This upgrade unlocks access to a comprehensive history.
+                </label>
+            </div>
+            <div class="addon">
+                <label>
+                    <input type="checkbox" class="addon-checkbox" data-price="200">
+                    <img src="https://via.placeholder.com/50" alt="VIP Passive Aggression Package">
+                    <strong>VIP Passive Aggression Package</strong> ($200/month) Did I go somewhere cool without you? This sends me automated messages on your behalf like, “Wow, cool to see you there without me.”
+                </label>
+            </div>
+            <div class="addon">
+                <label>
+                    <input type="checkbox" class="addon-checkbox" data-price="500">
+                    <img src="https://via.placeholder.com/50" alt="Special Event Spoilers">
+                    <strong>Special Event Spoilers</strong> ($500/event) Want to know when I’m at a wedding, funeral, or secret rave? This upgrade flags special events so you have a chance to crash.
+                </label>
+            </div>
+            <div class="addon">
+                <label>
+                    <input type="checkbox" class="addon-checkbox" data-price="1000">
+                    <img src="https://via.placeholder.com/50" alt="Guilt-Free Downtime">
+                    <strong>Guilt-Free Downtime</strong> ($1,000/year) For subscribers who want to stop obsessing: pay extra to have zero updates for one whole day a week! Getting a break from it all.
+                </label>
+            </div>
+        </div>
+
+        <div class="total">Total based on your selections: $<span id="total">1000</span></div>
+        <a href="https://account.venmo.com/u/angel-anderson" class="confirm">Confirm Subscription</a>
+        <p>Final Reminder: This is your one and only chance to subscribe. If you don't sign up now, you'll lose access to my exclusive whereabouts forever. No second chances, no secret invites, and no regrets.</p>
+        <p>DISCLAIMER:</p>
+        <p>By signing up for this subscription, you confirm that you have both impeccable taste and no common sense, which we applaud. You are paying for the privilege of knowing my exact whereabouts at all times. This subscription does not entitle you to my time, attention, or baked goods, no matter how close I am to your house. If you see me near your home and I don’t stop by, you may demand a refund but will not receive one. Add-ons are purely optional and mostly pointless, but let’s be honest, you’re here for the thrill of outrageous overspending. No refunds, even if I get abducted by aliens and they take over my social media.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const subscriptions = document.querySelectorAll('.subscription');
+            const addons = document.querySelectorAll('.addon-checkbox');
+            const totalElement = document.getElementById('total');
+
+            let total = 1000; // Annual is selected by default
+
+            subscriptions.forEach(subscription => {
+                subscription.addEventListener('click', () => {
+                    subscriptions.forEach(sub => sub.classList.remove('selected'));
+                    subscription.classList.add('selected');
+                    total = parseInt(subscription.dataset.price);
+                    addons.forEach(addon => {
+                        if (addon.checked) {
+                            total += parseInt(addon.dataset.price);
+                        }
+                    });
+                    updateTotal();
+                });
+            });
+
+            addons.forEach(addon => {
+                addon.addEventListener('change', () => {
+                    const addonPrice = parseInt(addon.dataset.price);
+                    if (addon.checked) {
+                        total += addonPrice;
+                    } else {
+                        total -= addonPrice;
+                    }
+                    updateTotal();
+                });
+            });
+
+            function updateTotal() {
+                totalElement.textContent = total;
+            }
+        });
+    </script>
 </body>
 </html>
