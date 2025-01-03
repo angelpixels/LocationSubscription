@@ -54,8 +54,21 @@
         }
         .addon {
             display: flex;
-            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
             margin-bottom: 15px;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .addon img {
+            flex-shrink: 0;
+        }
+        .addon label {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
         }
         .total {
             font-size: 1.5em;
@@ -79,7 +92,7 @@
             background-color: #218838;
         }
         .subscription img, .addon img {
-            max-width: 100%;
+            max-width: 50px;
             border-radius: 10px;
         }
         .subscription h3, .addon label {
@@ -87,6 +100,14 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+        }
+        .disclaimer {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #ff6f61;
+            font-size: 0.9em;
+            font-style: italic;
+            color: #666;
         }
     </style>
 </head>
@@ -115,44 +136,44 @@
         <div class="addons">
             <h2>Exclusive add-ons that are only available to subscribers:</h2>
             <div class="addon">
+                <img src="https://em-content.zobj.net/source/apple/391/crystal-ball_1f52e.png" alt="Random Vibes Messages">
                 <label>
                     <input type="checkbox" class="addon-checkbox" data-price="25">
-                    <img src="https://em-content.zobj.net/source/apple/391/crystal-ball_1f52e.png" hight="50" width="50" alt="Random Vibes Messages">
                     <strong>Random Vibes Messages</strong> ($25/text) Get sporadic texts from me like “Thinking of going to Costco” or “I just saw a dog.” No explanations, no follow-ups.
                 </label>
             </div>
             <div class="addon">
+                <img src="https://em-content.zobj.net/source/apple/118/pile-of-poo_1f4a9.png" alt="Bathroom Alerts">
                 <label>
                     <input type="checkbox" class="addon-checkbox" data-price="100">
-                    <img src="https://em-content.zobj.net/source/apple/118/pile-of-poo_1f4a9.png" hight="50" width="50" alt="Bathroom Alerts">
                     <strong>Bathroom Alerts</strong> ($100/notification) Receive an alert every time I enter or leave a bathroom. Be in the know, when I go! Cause I go A LOT!
                 </label>
             </div>
             <div class="addon">
+                <img src="https://em-content.zobj.net/source/apple/81/books_1f4da.png" alt="Access to My Past Locations">
                 <label>
                     <input type="checkbox" class="addon-checkbox" data-price="250">
-                    <img src="https://em-content.zobj.net/source/apple/81/books_1f4da.png" hight="50" width="50" alt="Access to My Past Locations">
                     <strong>Access to My Past Locations</strong> ($250/month) Want to relive my thrilling trip to the grocery store three weeks ago? This upgrade unlocks access to a comprehensive history.
                 </label>
             </div>
             <div class="addon">
+                <img src="https://em-content.zobj.net/source/apple/114/smiling-face-with-horns_1f608.png" alt="VIP Passive Aggression Package">
                 <label>
                     <input type="checkbox" class="addon-checkbox" data-price="200">
-                    <img src="https://em-content.zobj.net/source/apple/114/smiling-face-with-horns_1f608.png" hight="50" width="50" alt="VIP Passive Aggression Package">
                     <strong>VIP Passive Aggression Package</strong> ($200/month) Did I go somewhere cool without you? This sends me automated messages on your behalf like, “Wow, cool to see you there without me.”
                 </label>
             </div>
             <div class="addon">
+                <img src="https://em-content.zobj.net/source/apple/81/face-screaming-in-fear_1f631.png" alt="Special Event Spoilers">
                 <label>
                     <input type="checkbox" class="addon-checkbox" data-price="500">
-                    <img src="https://em-content.zobj.net/source/apple/81/face-screaming-in-fear_1f631.png" hight="50" width="50" alt="Special Event Spoilers">
                     <strong>Special Event Spoilers</strong> ($500/event) Want to know when I’m at a wedding, funeral, or secret rave? This upgrade flags special events so you have a chance to crash.
                 </label>
             </div>
             <div class="addon">
+                <img src="https://em-content.zobj.net/source/apple/81/beach-with-umbrella_1f3d6.png" alt="Guilt-Free Downtime">
                 <label>
                     <input type="checkbox" class="addon-checkbox" data-price="1000">
-                    <img src="https://em-content.zobj.net/source/apple/81/beach-with-umbrella_1f3d6.png" hight="50" width="50" alt="Guilt-Free Downtime">
                     <strong>Guilt-Free Downtime</strong> ($1,000/year) For subscribers who want to stop obsessing: pay extra to have zero updates for one whole day a week! Getting a break from it all.
                 </label>
             </div>
@@ -161,8 +182,10 @@
         <div class="total">Total based on your selections: $<span id="total">1000</span></div>
         <a href="https://account.venmo.com/u/angel-anderson" class="confirm">Confirm Subscription</a>
         <p>Final Reminder: This is your one and only chance to subscribe. If you don't sign up now, you'll lose access to my exclusive whereabouts forever. No second chances, no secret invites, and no regrets.</p>
-        <p>DISCLAIMER:</p>
-        <p>By signing up for this subscription, you confirm that you have both impeccable taste and no common sense, which we applaud. You are paying for the privilege of knowing my exact whereabouts at all times. This subscription does not entitle you to my time, attention, or baked goods, no matter how close I am to your house. If you see me near your home and I don’t stop by, you may demand a refund but will not receive one. Add-ons are purely optional and mostly pointless, but let’s be honest, you’re here for the thrill of outrageous overspending. No refunds, even if I get abducted by aliens and they take over my social media.</p>
+        <div class="disclaimer">
+            <p>DISCLAIMER:</p>
+            <p>By signing up for this subscription, you confirm that you have both impeccable taste and no common sense, which we applaud. You are paying for the privilege of knowing my exact whereabouts at all times. This subscription does not entitle you to my time, attention, or baked goods, no matter how close I am to your house. If you see me near your home and I don’t stop by, you may demand a refund but will not receive one. Add-ons are purely optional and mostly pointless, but let’s be honest, you’re here for the thrill of outrageous overspending. No refunds, even if I get abducted by aliens and they take over my social media.</p>
+        </div>
     </div>
 
     <script>
