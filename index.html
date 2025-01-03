@@ -1,187 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Subscription Selection</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #f9f9f9;
-    }
-
-    h1 {
-      margin: 20px 0;
-    }
-
-    .subscriptions {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 20px 0;
-    }
-
-    .subscription {
-      border: 2px solid #ccc;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      width: 200px;
-      cursor: pointer;
-      background-color: white;
-      transition: background-color 0.3s, border-color 0.3s;
-    }
-
-    .subscription:hover {
-      background-color: #f0f8ff;
-      border-color: #0078d7;
-    }
-
-    .subscription.selected {
-      background-color: #0078d7;
-      color: white;
-      border-color: #005bb5;
-    }
-
-    .addons {
-      margin: 20px 0;
-      width: 80%;
-      max-width: 600px;
-    }
-
-    .addon {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px;
-      margin: 5px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: white;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .addon:hover {
-      background-color: #f0f8ff;
-    }
-
-    .addon input {
-      margin-right: 10px;
-    }
-
-    .total {
-      margin: 20px 0;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .confirm {
-      padding: 10px 20px;
-      background-color: #0078d7;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .confirm:hover {
-      background-color: #005bb5;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .subscriptions {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .subscription {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .subscription:hover {
+            background-color: #f0f8ff;
+            transform: scale(1.02);
+        }
+        .subscription.selected {
+            background-color: #ffefcc;
+            border-color: #ffa500;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+        }
+        .addons {
+            margin: 20px 0;
+        }
+        .addon {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .total {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .confirm {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .confirm:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-  <h1>Select the perfect level to enhance your life!</h1>
-  <div class="subscriptions">
-    <div class="subscription" data-price="100">
-      <h3>Monthly</h3>
-      <p>($100/Month)</p>
-      <p>This is for poor people. Plus you must remember to pay by 1pm on the first day of each month or you’ll be blocked for 3 months.</p>
-    </div>
-    <div class="subscription" data-price="1000">
-      <h3>Annual</h3>
-      <p>($1,000 annually)</p>
-      <p>Get 2 free months of life-enhancing location intel! You’ll be in the know on all of my comings and goings for a full year!</p>
-      <p><strong>BEST VALUE!</strong></p>
-    </div>
-    <div class="subscription" data-price="3000">
-      <h3>Annual Stalker</h3>
-      <p>($3,000 annually)</p>
-      <p>Unlocks timestamps for all my location updates so you can analyze my speed, stops, and patterns. Great for obsessive planners or detectives.</p>
-    </div>
-    <div class="subscription" data-price="10000">
-      <h3>Lifetime VIP Access</h3>
-      <p>($10,000 one-time fee)</p>
-      <p>For the ultimate flex, pay a premium for permanent access, ensuring you'll never lose track of me no matter how many pricing changes I make in the future.</p>
-    </div>
-  </div>
+    <div class="container">
+        <h1>Select the perfect level to enhance your life!</h1>
+        <div class="subscriptions">
+            <div class="subscription" data-price="100" data-type="Monthly">
+                <h3>Monthly ($100/Month)</h3>
+                <p>This is for poor people. Plus you must remember to pay by 1pm on the first day of each month or you’ll be blocked for 3 months.</p>
+            </div>
+            <div class="subscription selected" data-price="1000" data-type="Annual">
+                <h3>Annual ($1,000 annually)</h3>
+                <p>Get 2 free months of life-enhancing location intel! You’ll be in the know on all of my comings and goings for a full year! <strong>BEST VALUE!</strong></p>
+            </div>
+            <div class="subscription" data-price="3000" data-type="Annual Stalker">
+                <h3>Annual Stalker ($3000 annually)</h3>
+                <p>Unlocks timestamps for all my location updates so you can analyze my speed, stops, and patterns. Great for obsessive planners or detectives.</p>
+            </div>
+            <div class="subscription" data-price="10000" data-type="Lifetime VIP Access">
+                <h3>Lifetime VIP Access ($10,000 one-time fee)</h3>
+                <p>For the ultimate flex, pay a premium for permanent access, ensuring you'll never lose track of me no matter how many pricing changes I make in the future.</p>
+            </div>
+        </div>
 
-  <div class="addons">
-    <div class="addon">
-      <label><input type="checkbox" data-price="25"> Random Vibes Messages – $25/text</label>
-    </div>
-    <div class="addon">
-      <label><input type="checkbox" data-price="100"> Bathroom Alerts – $100/notification</label>
-    </div>
-    <div class="addon">
-      <label><input type="checkbox" data-price="250"> Access to My Past Locations – $250/month</label>
-    </div>
-    <div class="addon">
-      <label><input type="checkbox" data-price="200"> VIP Passive Aggression Package – $200/month</label>
-    </div>
-    <div class="addon">
-      <label><input type="checkbox" data-price="500"> Special Event Spoilers – $500/event</label>
-    </div>
-    <div class="addon">
-      <label><input type="checkbox" data-price="1000"> Guilt-Free Downtime – $1,000/year</label>
-    </div>
-  </div>
+        <div class="addons">
+            <h2>Exclusive add-ons that are only available to subscribers:</h2>
+            <div class="addon">
+                <label>
+                    <input type="checkbox" class="addon-checkbox" data-price="25">
+                    Random Vibes Messages – $25/text
+                </label>
+            </div>
+            <div class="addon">
+                <label>
+                    <input type="checkbox" class="addon-checkbox" data-price="100">
+                    Bathroom Alerts – $100/notification
+                </label>
+            </div>
+            <div class="addon">
+                <label>
+                    <input type="checkbox" class="addon-checkbox" data-price="250">
+                    Access to My Past Locations – $250/month
+                </label>
+            </div>
+            <div class="addon">
+                <label>
+                    <input type="checkbox" class="addon-checkbox" data-price="200">
+                    VIP Passive Aggression Package – $200/month
+                </label>
+            </div>
+            <div class="addon">
+                <label>
+                    <input type="checkbox" class="addon-checkbox" data-price="500">
+                    Special Event Spoilers – $500/event
+                </label>
+            </div>
+            <div class="addon">
+                <label>
+                    <input type="checkbox" class="addon-checkbox" data-price="1000">
+                    Guilt-Free Downtime – $1,000/year
+                </label>
+            </div>
+        </div>
 
-  <div class="total">Total based on your selections: $0</div>
-  <button class="confirm" onclick="window.location.href='https://venmo.com/'">Confirm Subscription</button>
+        <div class="total">Total based on your selections: $<span id="total">1000</span></div>
+        <a href="https://venmo.com/your-venmo-username" class="confirm">Confirm Subscription</a>
+    </div>
 
-  <script>
-    const subscriptions = document.querySelectorAll('.subscription');
-    const addons = document.querySelectorAll('.addon input');
-    const totalElement = document.querySelector('.total');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const subscriptions = document.querySelectorAll('.subscription');
+            const addons = document.querySelectorAll('.addon-checkbox');
+            const totalElement = document.getElementById('total');
 
-    let selectedSubscriptionPrice = 0;
-    let addonsPrice = 0;
+            let total = 1000; // Annual is selected by default
 
-    // Update the total price
-    function updateTotal() {
-      const total = selectedSubscriptionPrice + addonsPrice;
-      totalElement.textContent = `Total based on your selections: $${total}`;
-    }
+            subscriptions.forEach(subscription => {
+                subscription.addEventListener('click', () => {
+                    subscriptions.forEach(sub => sub.classList.remove('selected'));
+                    subscription.classList.add('selected');
+                    total = parseInt(subscription.dataset.price);
+                    updateTotal();
+                });
+            });
 
-    // Handle subscription selection
-    subscriptions.forEach(subscription => {
-      subscription.addEventListener('click', () => {
-        subscriptions.forEach(sub => sub.classList.remove('selected'));
-        subscription.classList.add('selected');
-        selectedSubscriptionPrice = parseInt(subscription.getAttribute('data-price'));
-        updateTotal();
-      });
-    });
+            addons.forEach(addon => {
+                addon.addEventListener('change', () => {
+                    const addonPrice = parseInt(addon.dataset.price);
+                    if (addon.checked) {
+                        total += addonPrice;
+                    } else {
+                        total -= addonPrice;
+                    }
+                    updateTotal();
+                });
+            });
 
-    // Handle addon selection
-    addons.forEach(addon => {
-      addon.addEventListener('change', () => {
-        const addonPrice = parseInt(addon.getAttribute('data-price'));
-        if (addon.checked) {
-          addonsPrice += addonPrice;
-        } else {
-          addonsPrice -= addonPrice;
-        }
-        updateTotal();
-      });
-    });
-  </script>
+            function updateTotal() {
+                totalElement.textContent = total;
+            }
+        });
+    </script>
 </body>
 </html>
