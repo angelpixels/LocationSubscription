@@ -76,7 +76,7 @@
         <div class="subscriptions">
             <div class="subscription" data-price="100" data-type="Monthly">
                 <h3>Monthly ($100/Month)</h3>
-                <p>This is for poor people. Plus you must remember to pay by 1pm on the first day of each month or you’ll be blocked for 3 months.</p>
+                <p>This is for POOR people. Plus you must remember to pay by 1pm on the first day of each month or you’ll be blocked for 3 months.</p>
             </div>
             <div class="subscription selected" data-price="1000" data-type="Annual">
                 <h3>Annual ($1,000 annually)</h3>
@@ -149,6 +149,11 @@
                     subscriptions.forEach(sub => sub.classList.remove('selected'));
                     subscription.classList.add('selected');
                     total = parseInt(subscription.dataset.price);
+                    addons.forEach(addon => {
+                        if (addon.checked) {
+                            total += parseInt(addon.dataset.price);
+                        }
+                    });
                     updateTotal();
                 });
             });
